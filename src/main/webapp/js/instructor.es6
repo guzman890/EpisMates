@@ -283,9 +283,9 @@ function bindCourseDeleteLinks() {
         event.preventDefault();
 
         const $clickedLink = $(event.target);
-        const messageText = `Are you sure you want to delete the course: ${$clickedLink.data('courseId')}? `
-                          + 'This operation will delete all students and sessions in this course. '
-                          + 'All instructors of this course will not be able to access it hereafter as well.';
+        const messageText = "Estas seguro de ELIMINAR el CURSO: ${$clickedLink.data('courseId')}? "
+                          + 'Esta accion eliminara a todos los estudiantes y sesiones de este curso. '
+                          + 'Ningun instructor de este cursos no tendran acceso luego de eliminarlo.';
         const okCallback = function () {
             window.location = $clickedLink.attr('href');
         };
