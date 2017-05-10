@@ -143,12 +143,18 @@ public class InstructorCoursesPageData extends PageData {
                                                    + "t_course_delete" + idx, "", deleteLink, Const.Tooltips.COURSE_DELETE,
                                                    !hasDeletePermission);
             deleteButton.setAttribute("data-course-id", course.getId());
+            
+            
+            ElementTag mod_nom_course = createButton("Renombrar Curso", "btn btn-default btn-xs t_course_editarNombre" + idx, "", //richardz
+                    getInstructorCourseEditNameLink(course.getId()),//richardz
+                    Const.Tooltips.COURSE_EDITNAME, false);//richardz
 
             actionsParam.add(enrollButton);
             actionsParam.add(viewButton);
-            actionsParam.add(editButton);
             actionsParam.add(archiveButton);
             actionsParam.add(deleteButton);
+            //añadiendo boton por richardz
+            actionsParam.add(mod_nom_course); //richardz
 
             ActiveCoursesTableRow row = new ActiveCoursesTableRow(SanitizationHelper.sanitizeForHtml(course.getId()),
                                                                   SanitizationHelper.sanitizeForHtml(course.getName()),
