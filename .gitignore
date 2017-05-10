@@ -1,2 +1,5 @@
 # Google App Engine generated folder
 appengine-generated/
+node_modules/*
+src/main/webapp/js/*
+src/main/webapp/dev/*
