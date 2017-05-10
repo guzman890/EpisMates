@@ -37,7 +37,7 @@ public class InstructorCourseEditSaveAction extends Action {
             setStatusForException(e);
         }
 
-        RedirectResult result = createRedirectResult(Const.ActionURIs.INSTRUCTOR_COURSE_EDIT_PAGE);
+        RedirectResult result = createRedirectResult(Const.ActionURIs.INSTRUCTOR_COURSE_EDITNAME_PAGE); //richardz
         result.addResponseParam(Const.ParamsNames.COURSE_ID, courseId);
         return result;
     }
