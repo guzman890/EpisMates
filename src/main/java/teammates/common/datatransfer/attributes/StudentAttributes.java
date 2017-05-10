@@ -71,7 +71,7 @@ public class StudentAttributes extends EntityAttributes {
         this.comments = SanitizationHelper.sanitizeTextField(student.getComments());
         this.team = student.getTeamName();
         this.section = student.getSectionName() == null ? Const.DEFAULT_SECTION : student.getSectionName();
-        this.googleId = student.getGoogleId() == null ? "" : student.getGoogleId();
+        this.googleId = student.getGoogleId();
         this.key = student.getRegistrationKey();
 
         this.createdAt = student.getCreatedAt();
