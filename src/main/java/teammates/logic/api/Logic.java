@@ -1036,6 +1036,16 @@ public class Logic {
         studentsLogic.deleteStudentCascade(courseId, studentEmail);
     }
 
+    public void deleteStudents(String courseId) {
+
+        Assumption.assertNotNull(courseId);
+       
+
+        studentsLogic.deleteStudentsCascade(courseId);
+    }
+
+
+
     public void deleteStudentWithoutDocument(String courseId, String studentEmail) {
 
         Assumption.assertNotNull(courseId);

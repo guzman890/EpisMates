@@ -143,12 +143,18 @@ public class InstructorCoursesPageData extends PageData {
                                                    + "t_course_delete" + idx, "", deleteLink, Const.Tooltips.COURSE_DELETE,
                                                    !hasDeletePermission);
             deleteButton.setAttribute("data-course-id", course.getId());
+    
 
+            String deleteStudents= getInstructorCourseDeleteStudentsLink(course.getId());
+            ElementTag deleteStudentsButton = createButton("DeleteStudents", "btn btn-default btn-xs course-delete-students-link"
+                                                    + "t_course_delete"+idx, "", deleteStudents, Const.Tooltips.COURSE_DELETE_STUDENTS,
+                                                   !hasDeletePermission);                                        
             actionsParam.add(enrollButton);
             actionsParam.add(viewButton);
             actionsParam.add(editButton);
             actionsParam.add(archiveButton);
             actionsParam.add(deleteButton);
+            actionsParam.add(deleteStudentsButton);
 
             ActiveCoursesTableRow row = new ActiveCoursesTableRow(SanitizationHelper.sanitizeForHtml(course.getId()),
                                                                   SanitizationHelper.sanitizeForHtml(course.getName()),

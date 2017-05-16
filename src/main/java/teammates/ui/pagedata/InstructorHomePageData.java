@@ -22,6 +22,8 @@ public class InstructorHomePageData extends PageData {
         this.sortCriteria = sortCriteria;
         this.isSortingDisabled = courseList.size() < 2;
         setCourseTables(courseList);
+
+
     }
 
     public String getSortCriteria() {
