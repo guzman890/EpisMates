@@ -265,7 +265,7 @@ function bindCourseDeleteLinks() {
         var okCallback = function okCallback() {
             window.location = $clickedLink.attr('href');
         };
-        console.log("kevin");
+
         BootboxWrapper.showModalConfirmation('Confirm deleting course', messageText, okCallback, null, BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
     });
 }
@@ -299,25 +299,6 @@ function attachEventToDeleteStudentLink() {
 }
 
 //DELETE STUDENTS OF A COURSE
-/*
-function attachEventToDeleteStudentsLink() {
-    $(document).on('click', '.course-students-delete-link', (event) => {
-        event.preventDefault();
-
-        const $clickedLink = $(event.target);
-        const messageText = `Are you sure you want to remove all students
-                           } from the course ${$clickedLink.data('courseId')}?`;
-        const okCallback = function () {
-            window.location = $clickedLink.attr('href');
-        };
-
-        BootboxWrapper.showModalConfirmation('Confirm deletion', messageText, okCallback, null,
-                BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
-    });
-}
-
-*/
-
 
 function bindCourseDeleteStudentsLinks() {
     $('body').on('click', '.course-delete-students-link', function (event) {
@@ -328,9 +309,8 @@ function bindCourseDeleteStudentsLinks() {
         var okCallback = function okCallback() {
             window.location = $clickedLink.attr('href');
         };
-        console.log("Luisa");
 
-        BootboxWrapper.showModalConfirmation('Confirm deleting all students', messageText, okCallback, null, BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
+        BootboxWrapper.showModalConfirmation('Confirm deleting students', messageText, okCallback, null, BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
     });
 }
 
@@ -469,6 +449,6 @@ function prepareInstructorPages() {
 
     // bind the event handler to show confirmation modal
     bindCourseDeleteLinks();
-    bindCourseDeleteStudentsLinks();
     bindSessionDeleteLinks();
+    bindCourseDeleteStudentsLinks();
 }

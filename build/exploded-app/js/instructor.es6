@@ -328,24 +328,7 @@ function attachEventToDeleteStudentLink() {
 }
 
 //DELETE STUDENTS OF A COURSE
-/*
-function attachEventToDeleteStudentsLink() {
-    $(document).on('click', '.course-students-delete-link', (event) => {
-        event.preventDefault();
 
-        const $clickedLink = $(event.target);
-        const messageText = `Are you sure you want to remove all students
-                           } from the course ${$clickedLink.data('courseId')}?`;
-        const okCallback = function () {
-            window.location = $clickedLink.attr('href');
-        };
-
-        BootboxWrapper.showModalConfirmation('Confirm deletion', messageText, okCallback, null,
-                BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
-    });
-}
-
-*/
 function bindCourseDeleteStudentsLinks() {
     $('body').on('click', '.course-delete-students-link', (event) => {
         event.preventDefault();
@@ -504,4 +487,5 @@ function prepareInstructorPages() {
     // bind the event handler to show confirmation modal
     bindCourseDeleteLinks();
     bindSessionDeleteLinks();
+    bindCourseDeleteStudentsLinks();
 }

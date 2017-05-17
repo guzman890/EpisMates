@@ -1040,7 +1040,6 @@ public class Logic {
 
         Assumption.assertNotNull(courseId);
        
-
         studentsLogic.deleteStudentsCascade(courseId);
     }
 
