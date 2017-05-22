@@ -104,7 +104,19 @@
                     ${fqForm.questionSpecificEditFormHtml}
                 </div>
             </div>
-
+            <div class="col-sm-12 margin-bottom-15px background-color-light-blue">
+                <div class="form-group" style="padding: 15px;">
+                    <div class="">
+                        <button id="uploadFile"
+                                class="btn btn-primary"
+                                type="button"
+                                data-toggle="modal"
+                                data-target="#fileUploader">
+                            Upload File
+                        </button>
+                    </div>
+                </div>
+            </div>
             <feedbackEdit:questionFeedbackPathSettings fqForm="${fqForm}"/>
             <feedbackEdit:questionVisibilityOptions fqForm="${fqForm}"/>
             
