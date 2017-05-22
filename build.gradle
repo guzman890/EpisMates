@@ -276,6 +276,7 @@ compileTestJava.options.encoding = "UTF-8"
 
 appengine {
     httpPort = 8888
+
     downloadSdk = true
     jvmFlags = ["-Duser.timezone=UTC", "-Xss2m", "-Dfile.encoding=UTF-8"]
     appcfg {
