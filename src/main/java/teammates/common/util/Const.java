@@ -911,7 +911,8 @@ public final class Const {
         public static final String INSTRUCTOR_FEEDBACK_QUESTION_EDIT = "/page/instructorFeedbackQuestionEdit";
         public static final String INSTRUCTOR_FEEDBACK_QUESTION_VISIBILITY_MESSAGE =
                 "/page/instructorFeedbackQuestionvisibilityMessage";
-
+        public static final String INSTRUCTOR_FEEDBACK_QUESTION_CREATEUPLOADFORMURL = "/page/instructorFeedbackQuestionCreateFormUrl";
+        public static final String INSTRUCTOR_FEEDBACK_QUESTION_FILE_UPLOAD = "/page/instructorFeedbackQuestionFileUpload";
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_ADD = "/page/instructorFeedbackResponseCommentAdd";
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_EDIT = "/page/instructorFeedbackResponseCommentEdit";
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_DELETE =
