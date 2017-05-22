@@ -254,6 +254,19 @@ public class TaskQueuer {
                 TaskQueue.STUDENT_COURSE_JOIN_EMAIL_WORKER_URL, paramMap);
     }
 
+/*
+    public void courseDeleteNotificationToStudent(String courseId, String studentEmail) {
+        Map<String, String> paramMap = new HashMap<String, String>();
+        paramMap.put(ParamsNames.COURSE_ID, courseId);
+        paramMap.put(ParamsNames.STUDENT_EMAIL, studentEmail);
+       // paramMap.put(ParamsNames.IS_STUDENT_REJOINING, "false");
+       
+
+        addTask(TaskQueue.STUDENT_COURSE_DELETE_EMAIL_QUEUE_NAME,
+                TaskQueue.STUDENT_COURSE_DELETE_EMAIL_WORKER_URL, paramMap);
+    }
+    */
+
     /**
      * Schedules adjustments to be done to responses of a feedback session in the database
      * after change is done to a course, typically after enrollment of new students

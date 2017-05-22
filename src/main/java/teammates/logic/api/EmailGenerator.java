@@ -575,6 +575,23 @@ public class EmailGenerator {
         return email;
     }
 
+//efjhabfbajwbfalg
+    public EmailWrapper generateStudentCourseDeleteEmail(CourseAttributes course, StudentAttributes student) {
+
+        String emailBody = Templates.populateTemplate(
+                fillUpStudentJoinFragment(student, EmailTemplates.USER_COURSE_JOIN),
+                "${userName}", SanitizationHelper.sanitizeForHtml(student.name),
+                "${courseName}", SanitizationHelper.sanitizeForHtml(course.getName()),
+                "${supportEmail}", Config.SUPPORT_EMAIL);
+
+        EmailWrapper email = getEmptyEmailAddressedToEmail(student.email);
+        email.setSubject(String.format(EmailType.STUDENT_COURSE_DELETE.getSubject(),
+                                       course.getName(), course.getId()));
+        email.setContent(emailBody);
+        return email;
+    }
+
+
     /**
      * Generates the course re-join email for the given {@code student} in {@code course}.
      */
@@ -617,6 +634,15 @@ public class EmailGenerator {
     }
 
     private String fillUpStudentJoinFragment(StudentAttributes student, String emailBody) {
+        String joinUrl = Config.getAppUrl(student.getRegistrationUrl()).toAbsoluteString();
+
+        return Templates.populateTemplate(emailBody,
+                "${joinFragment}", EmailTemplates.FRAGMENT_STUDENT_COURSE_JOIN,
+                "${joinUrl}", joinUrl);
+    }
+
+//EmailDelete
+    private String fillUpStudentDeleteFragment(StudentAttributes student, String emailBody) {
         String joinUrl = Config.getAppUrl(student.getRegistrationUrl()).toAbsoluteString();
 
         return Templates.populateTemplate(emailBody,

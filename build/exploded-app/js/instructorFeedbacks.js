@@ -245,7 +245,7 @@ function updateUncommonSettingsSessionVisibilityInfo() {
 }
 
 function updateUncommonSettingsEmailSendingInfo() {
-    var info = 'Emails are sent when session opens ' + 'when srudents has been session closes and when results are published.';
+    var info = 'Emails are sent when session opens (within 15 mins), ' + '24 hrs before session closes and when results are published.';
 
     $('#uncommonSettingsSendEmailsInfoText').html(info);
 }

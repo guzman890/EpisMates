@@ -1040,6 +1040,9 @@ public final class Const {
         public static final String STUDENT_COURSE_JOIN_EMAIL_QUEUE_NAME = "student-course-join-email-queue";
         public static final String STUDENT_COURSE_JOIN_EMAIL_WORKER_URL = "/worker/studentCourseJoinEmail";
 
+         public static final String STUDENT_COURSE_DELETE_EMAIL_QUEUE_NAME = "student-course-delete-email-queue";
+        public static final String STUDENT_COURSE_DELETE_EMAIL_WORKER_URL = "/worker/studentCourseDeleteEmail";
+
     }
 
     public static class PublicActionNames {
