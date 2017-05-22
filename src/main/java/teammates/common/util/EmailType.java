@@ -19,7 +19,8 @@ public enum EmailType {
     STUDENT_COURSE_JOIN("TEAMMATES: Invitation to join course [%s][Course ID: %s]"),
     STUDENT_COURSE_REJOIN_AFTER_GOOGLE_ID_RESET("TEAMMATES: Your account has been reset for course [%s][Course ID: %s]"),
     INSTRUCTOR_COURSE_JOIN("TEAMMATES: Invitation to join course as an instructor [%s][Course ID: %s]"),
-    SEVERE_LOGS_COMPILATION("TEAMMATES (%s): Severe Error Logs Compilation");
+    SEVERE_LOGS_COMPILATION("TEAMMATES (%s): Severe Error Logs Compilation"),
+    STUDENT_COURSE_GRADUATED("TEAMMATES (%s): Students has been graduated");
 
     private final String subject;
 
