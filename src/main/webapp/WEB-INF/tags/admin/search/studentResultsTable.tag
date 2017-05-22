@@ -21,10 +21,10 @@
             <thead>
                 <tr>
                     <th>Institute </th>
-                    <th>Course[Section](Team)</th>
+                    <th>Course(Team)(Tag)</th>
                     <th>Name</th>
                     <th>Google ID[Details]</th>
-                    <th>Comments</th>
+                    <th>Tag</th>
                     <th>Options</th>
 
                 </tr>
