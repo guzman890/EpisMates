@@ -172,11 +172,13 @@ public final class Const {
 
         public static final String COURSE_ENROLL = "Enroll student into the course";
         public static final String COURSE_DETAILS = "View, edit and send invitation emails to the students in the course";
-        public static final String COURSE_EDIT = "Edit Course information and instructor list";
-        public static final String COURSE_DELETE = "Delete the course and its corresponding students and sessions(the students has been recived email)";
+        public static final String COURSE_EDIT = "Editar Información del Curso";//richardc
+        public static final String COURSE_EDITNAME = "Editar el NOMBRE de este CURSO"; //richardc
+        public static final String COURSE_DELETE = "Eliminar Curso";//richardc
         public static final String COURSE_ARCHIVE =
                 "Archive the course so that it will not be shown in the home page any more "
                 + "(you can still access it from the 'Courses' tab)";
+/*nuevo*/ public static final String COURSE_DELETE_STUDENTS="Delete all students in the course";
         public static final String COURSE_ADD_FEEDBACKSESSION = "Add a feedback session for the course";
         public static final String COURSE_EMAIL_PENDING_COMMENTS =
                 "Send email notification to recipients of %s pending comment%s";
@@ -184,7 +186,7 @@ public final class Const {
         public static final String PERCEIVED =
                 "This is the average of what other team members think this student contributed";
 
-        public static final String COURSE_INFO_EDIT = "Edit course name";
+        public static final String COURSE_INFO_EDIT = "Editar Informacion del Curso"; //richardc
         public static final String COURSE_INSTRUCTOR_EDIT = "Edit instructor details";
         public static final String COURSE_INSTRUCTOR_CANCEL_EDIT = "Cancel editing instructor details";
         public static final String COURSE_INSTRUCTOR_DELETE = "Delete the instructor from the course";
@@ -854,12 +856,14 @@ public final class Const {
         public static final String INSTRUCTOR_COURSE_ARCHIVE = "/page/instructorCourseArchive";
         public static final String INSTRUCTOR_COURSE_DETAILS_PAGE = "/page/instructorCourseDetailsPage";
         public static final String INSTRUCTOR_COURSE_EDIT_PAGE = "/page/instructorCourseEditPage";
+        public static final String INSTRUCTOR_COURSE_EDITNAME_PAGE = "/page/instructorCourseEditNamePage";//richardc
         public static final String INSTRUCTOR_COURSE_EDIT_SAVE = "/page/instructorCourseEditSave";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS_PAGE = "/page/instructorCourseStudentDetailsPage";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS_EDIT = "/page/instructorCourseStudentDetailsEdit";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS_EDIT_SAVE =
                 "/page/instructorCourseStudentDetailsEditSave";
         public static final String INSTRUCTOR_COURSE_STUDENT_DELETE = "/page/instructorCourseStudentDelete";
+        public static final String INSTRUCTOR_COURSE_STUDENTS_DELETE="/page/instructorCoursesStudentsDelete";
         public static final String INSTRUCTOR_COURSE_STUDENT_LIST_DOWNLOAD = "/page/instructorCourseStudentListDownload";
         public static final String INSTRUCTOR_COURSE_ENROLL_PAGE = "/page/instructorCourseEnrollPage";
         public static final String INSTRUCTOR_COURSE_ENROLL_SAVE = "/page/instructorCourseEnrollSave";
@@ -911,6 +915,9 @@ public final class Const {
         public static final String INSTRUCTOR_FEEDBACK_QUESTION_EDIT = "/page/instructorFeedbackQuestionEdit";
         public static final String INSTRUCTOR_FEEDBACK_QUESTION_VISIBILITY_MESSAGE =
                 "/page/instructorFeedbackQuestionvisibilityMessage";
+
+        public static final String INSTRUCTOR_FEEDBACK_QUESTION_CREATEUPLOADFORMURL = "/page/instructorFeedbackQuestionCreateFormUrl";
+        public static final String INSTRUCTOR_FEEDBACK_QUESTION_FILE_UPLOAD = "/page/instructorFeedbackQuestionFileUpload";
 
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_ADD = "/page/instructorFeedbackResponseCommentAdd";
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_EDIT = "/page/instructorFeedbackResponseCommentEdit";
@@ -1069,6 +1076,7 @@ public final class Const {
                 "/jsp/instructorFeedbackResponseCommentsLoad.jsp";
         public static final String INSTRUCTOR_COURSES = "/jsp/instructorCourses.jsp";
         public static final String INSTRUCTOR_COURSE_EDIT = "/jsp/instructorCourseEdit.jsp";
+        public static final String INSTRUCTOR_COURSE_EDITNAME = "/jsp/instructorCourseEditName.jsp"; //richardc
         public static final String INSTRUCTOR_COURSE_DETAILS = "/jsp/instructorCourseDetails.jsp";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS = "/jsp/instructorCourseStudentDetails.jsp";
         public static final String INSTRUCTOR_COURSE_STUDENT_EDIT = "/jsp/instructorCourseStudentEdit.jsp";
@@ -1194,7 +1202,7 @@ public final class Const {
         public static final String COURSE_EXISTS =
                 "A course by the same ID already exists in the system, possibly created by another user. "
                 + "Please choose a different course ID";
-        public static final String COURSE_EDITED = "The course has been edited.";
+        public static final String COURSE_EDITED = "El curso se ha actualizado."; //richardc
         public static final String COURSE_ARCHIVED =
                 "The course %s has been archived. It will not appear in the home page any more.";
         // TODO: Let undo process to be in the Course page for now.
@@ -1203,7 +1211,7 @@ public final class Const {
                 COURSE_ARCHIVED + " You can access archived courses from the 'Courses' tab.<br>"
                 + "Go there to undo the archiving and bring the course back to the home page.";
         public static final String COURSE_UNARCHIVED = "The course %s has been unarchived.";
-        public static final String COURSE_DELETED = "The course %s has been deleted.";
+        public static final String COURSE_DELETED = "Se ha eliminado el Curso: %s"; // richardd
         public static final String COURSE_EMPTY =
                 "You have not created any courses yet. Use the form above to create a course.";
         public static final String COURSE_EMPTY_IN_INSTRUCTOR_FEEDBACKS =
@@ -1270,6 +1278,7 @@ public final class Const {
         public static final String STUDENT_NOT_FOUND_FOR_EDIT =
                 "The student you tried to edit does not exist. " + STUDENT_EVENTUAL_CONSISTENCY;
         public static final String STUDENT_DELETED = "The student has been removed from the course";
+        public static final String STUDENTS_DELETED= "The students has been removed from the course";
         public static final String STUDENT_PROFILE_EDITED = "Your profile has been edited successfully";
         public static final String STUDENT_PROFILE_PICTURE_SAVED = "Your profile picture has been saved successfully";
         public static final String STUDENT_PROFILE_PIC_TOO_LARGE = "The uploaded profile picture was too large. "

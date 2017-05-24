@@ -9,7 +9,6 @@ setStatusMessage:false, clearStatusMessages:false, fixContribQnGiverRecipient:fa
 showVisibilityCheckboxesIfCustomOptionSelected:false, hasAssignedWeights:false, disallowNonNumericEntries:false
 getVisibilityMessage:false, hideConstSumOptionTable:false, setDefaultContribQnVisibilityIfNeeded:false
 hideRankOptionTable:false, matchVisibilityOptionToFeedbackPath:false prepareDatepickers:false prepareInstructorPages:false
-
 FEEDBACK_SESSION_PUBLISHDATE:false, FEEDBACK_SESSION_PUBLISHTIME:false, FEEDBACK_SESSION_VISIBLEDATE:false
 FEEDBACK_SESSION_VISIBLETIME:false, FEEDBACK_QUESTION_DESCRIPTION:false, FEEDBACK_QUESTION_EDITTEXT:false
 FEEDBACK_QUESTION_SAVECHANGESTEXT:false, FEEDBACK_QUESTION_DISCARDCHANGES:false, FEEDBACK_QUESTION_EDITTYPE:false
@@ -885,7 +884,63 @@ function readyFeedbackEditPage() {
 
         $(this).parents('form.form_question').submit();
     });
+//File Load
+     $('#feedBackFileUpload').change(function () {
+         console.log("hola cmabios 2");
+         const val = $(this).val();
+         if (val === '') {
+             $('#feedbakFileUploadSubmit').prop('disabled', true);
+             $('.filename-preview').val('No File Selected');
+         } else {
+             $('#feedbakFileUploadSubmit').prop('disabled', false);
+             var newVal = val.split('\\')
+                             .pop()
+                             .split('/')
+                             .pop();
+             $('.filename-preview').val(newVal);
+         }
+     });
+     
+     //submit file
+     $('#feedbakFileUploadSubmit').on('click', () => {
+         console.log("click");
+        finaliseUploadFileForm();
+    });
+    
+    function finaliseUploadFileForm(){
+        if ($('#feedBackFileUpload').val() === '') {
+            return;
+        }
 
+         const initialSubmitMessage = $('#feedbakFileUploadSubmit').html();
+         $.ajax({
+             //url: '/page/instructorFeedbackQuestionCreateFormUrl?user=' + $("input[name='user']").val()
+             url: '/page/studentProfileCreateFormUrl?user=' + $("input[name='user']").val(),
+             beforeSend() {
+                 $('#feedbakFileUploadSubmit').html('<img src="/images/ajax-loader.gif">');
+             },
+             error() {
+                 console.log("error");
+                 $('#feedbakFileUploadSubmit').text(initialSubmitMessage);
+                 setStatusMessage('There seems to be a network error, please try again later', StatusType.DANGER);
+                 scrollToTop({ duration: '' });
+             },
+             success(data) {
+                 console.log("succes");
+                 if (data.isError) {
+                     $('#feedbakFileUploadSubmit').text(initialSubmitMessage);
+                     setStatusMessage('There seems to be a network error, please try again later', StatusType.DANGER);
+                     scrollToTop({ duration: '' });
+                 } else {
+                     $('#feedbakFileUploadForm').attr('enctype', 'multipart/form-data');
+                     // for IE compatibility
+                     $('#feedbakFileUploadForm').attr('encoding', 'multipart/form-data');
+                     $('#feedbakFileUploadForm').attr('action', data.formUrl);
+                     $('#feedbakFileUploadForm').submit();
+                 }
+             },
+         });
+     }
     // Bind submit actions
     $('form[id|=form_editquestion]').submit(function (event) {
         prepareDescription($(event.currentTarget));

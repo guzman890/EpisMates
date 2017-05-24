@@ -59,6 +59,11 @@ public final class SanitizationHelper {
         if (sanitized.toLowerCase().endsWith("@gmail.com")) {
             sanitized = sanitized.split("@")[0];
         }
+        else{
+            String arr[] = sanitized.split("@");
+            if(arr.length == 2)
+                sanitized = arr[0];
+        }
         return sanitized.trim();
     }
 

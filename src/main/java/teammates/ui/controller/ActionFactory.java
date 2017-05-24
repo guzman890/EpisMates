@@ -50,12 +50,14 @@ public class ActionFactory {
         map(INSTRUCTOR_COURSE_STATS_PAGE, CourseStatsPageAction.class);
         map(INSTRUCTOR_COURSE_ADD, InstructorCourseAddAction.class);
         map(INSTRUCTOR_COURSE_DELETE, InstructorCourseDeleteAction.class);
+        map(INSTRUCTOR_COURSE_STUDENTS_DELETE, InstructorCourseDeleteStudentsAction.class);
         map(INSTRUCTOR_COURSE_ARCHIVE, InstructorCourseArchiveAction.class);
         map(INSTRUCTOR_COURSE_DETAILS_PAGE, InstructorCourseDetailsPageAction.class);
         map(INSTRUCTOR_COURSE_JOIN, InstructorCourseJoinAction.class);
         map(INSTRUCTOR_COURSE_JOIN_AUTHENTICATED, InstructorCourseJoinAuthenticatedAction.class);
         map(INSTRUCTOR_COURSE_REMIND, InstructorCourseRemindAction.class);
         map(INSTRUCTOR_COURSE_EDIT_PAGE, InstructorCourseEditPageAction.class);
+        map(INSTRUCTOR_COURSE_EDITNAME_PAGE, InstructorCourseEditNamePageAction.class); //richardz
         map(INSTRUCTOR_COURSE_EDIT_SAVE, InstructorCourseEditSaveAction.class);
         map(INSTRUCTOR_COURSE_INSTRUCTOR_ADD, InstructorCourseInstructorAddAction.class);
         map(INSTRUCTOR_COURSE_INSTRUCTOR_EDIT_SAVE, InstructorCourseInstructorEditSaveAction.class);
@@ -124,6 +126,7 @@ public class ActionFactory {
         map(STUDENT_PROFILE_PICTURE_UPLOAD, StudentProfilePictureUploadAction.class);
         map(STUDENT_PROFILE_PICTURE_EDIT, StudentProfilePictureEditAction.class);
         map(STUDENT_PROFILE_CREATEUPLOADFORMURL, StudentProfileCreateFormUrlAction.class);
+        map(INSTRUCTOR_FEEDBACK_QUESTION_CREATEUPLOADFORMURL, InstructorFeedbackQuestionCreateFormUrlAction.class);
         map(STUDENT_PROFILE_EDIT_SAVE, StudentProfileEditSaveAction.class);
         map(STUDENT_HOME_PAGE, StudentHomePageAction.class);
 

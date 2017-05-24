@@ -8,7 +8,7 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <strong>Course:</strong>
+        <strong>Curso:</strong> 
         
         <div class="pull-right">
             <a ${editCourseButton.attributesToString}>
@@ -27,33 +27,33 @@
             <input type="hidden" name="<%=Const.ParamsNames.INSTRUCTOR_ID%>" value="${data.account.googleId}">
             
             <div class="form-group">
-                <label class="col-sm-3 control-label">Course ID:</label>
+                <label class="col-sm-3 control-label">Curso ID:</label>
                 <div class="col-sm-3">
                     <input type="text" class="form-control"
                             name="<%=Const.ParamsNames.COURSE_ID%>" id="<%=Const.ParamsNames.COURSE_ID%>"
                             value="${course.id}"
-                            data-toggle="tooltip" data-placement="top" title="Identifier of the course, e.g.CS3215-Sem1."
+                            data-toggle="tooltip" data-placement="top" title="Identificador del Curso (Ejm. CS3215-Sem1)."
                             maxlength="<%=FieldValidator.COURSE_ID_MAX_LENGTH%>" tabindex="1" disabled>
                 </div>
             </div>
             
             <div class="form-group">
-                <label class="col-sm-3 control-label">Course Name:</label>
+                <label class="col-sm-3 control-label">Nombre del Curso:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control"
                             name="<%=Const.ParamsNames.COURSE_NAME%>" id="<%=Const.ParamsNames.COURSE_NAME%>"
                             value="${course.name}"
-                            data-toggle="tooltip" data-placement="top" title="The name of the course, e.g. Software Engineering."
+                            data-toggle="tooltip" data-placement="top" title="Nombre del Curso (Ejm. Ingenieria de Software)."
                             maxlength="<%=FieldValidator.COURSE_NAME_MAX_LENGTH%>" tabindex="2" disabled>
                 </div>
             </div>
             
             <div class="form-group">
-                <label class="col-sm-3 control-label">Time Zone:</label>
+                <label class="col-sm-3 control-label">Zona Horaria:</label>
                 <div class="col-sm-6">
                     <select class="form-control"
                             name="<%=Const.ParamsNames.COURSE_TIME_ZONE%>" id="<%=Const.ParamsNames.COURSE_TIME_ZONE%>"
-                            data-toggle="tooltip" data-placement="top" title="The time zone for the course, e.g. Asia/Singapore."
+                            data-toggle="tooltip" data-placement="top" title="Zona horaria para el curso(Ejm. Asia/Singapore)."
                             tabindex="3" disabled>
                         <option value="">Select a time zone...</option>
                     </select>
@@ -66,10 +66,10 @@
             <div class="form-group">
                 <div class=" col-sm-12 align-center">
                     <input type="submit" class="btn btn-primary" id="btnSaveCourse" name="btnSaveCourse"
-                            style="display:none;" value="Save Changes">
+                            style="display:none;" value="GUARDAR CAMBIOS"> <!-- //richardz -->
                 </div>
             </div>
-            
+            <!-- //richardz -->
             <input type="hidden" name="<%=Const.ParamsNames.USER_ID%>" value="${data.account.googleId}">
         </form>
     </div>

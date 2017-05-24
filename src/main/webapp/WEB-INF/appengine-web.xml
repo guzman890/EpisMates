@@ -9,11 +9,12 @@
     <!-- Application ID of the app -->
     <!-- For dev server testing, this could be anything -->
     <!-- For staging server testing, this should match the ID of the app your created on GAE -->
-    <application>tc-laboratorio3</application>
+
+    <application>teammates-john</application>
     
     <!-- Version number of the app -->
     <!-- Use dashes instead of dots because GAE does not allow dots in version number -->
-    <version>1</version>
+    <version>4-18</version>
     
     <!-- Specify which file contains logging configuration to be used by java.util.logging -->
     <system-properties>
