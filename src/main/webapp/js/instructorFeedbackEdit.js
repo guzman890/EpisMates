@@ -11,6 +11,7 @@ setStatusMessage:false, clearStatusMessages:false, fixContribQnGiverRecipient:fa
 showVisibilityCheckboxesIfCustomOptionSelected:false, hasAssignedWeights:false, disallowNonNumericEntries:false
 getVisibilityMessage:false, hideConstSumOptionTable:false, setDefaultContribQnVisibilityIfNeeded:false
 hideRankOptionTable:false, matchVisibilityOptionToFeedbackPath:false prepareDatepickers:false prepareInstructorPages:false
+
 FEEDBACK_SESSION_PUBLISHDATE:false, FEEDBACK_SESSION_PUBLISHTIME:false, FEEDBACK_SESSION_VISIBLEDATE:false
 FEEDBACK_SESSION_VISIBLETIME:false, FEEDBACK_QUESTION_DESCRIPTION:false, FEEDBACK_QUESTION_EDITTEXT:false
 FEEDBACK_QUESTION_SAVECHANGESTEXT:false, FEEDBACK_QUESTION_DISCARDCHANGES:false, FEEDBACK_QUESTION_EDITTYPE:false
@@ -858,6 +859,7 @@ function readyFeedbackEditPage() {
 
         $(this).parents('form.form_question').submit();
     });
+
     //File Load
     $('#feedBackFileUpload').change(function () {
         console.log("hola cmabios 2");
@@ -912,7 +914,8 @@ function readyFeedbackEditPage() {
             }
         });
     }
-    // Bind submit actions
+
+  // Bind submit actions
     $('form[id|=form_editquestion]').submit(function (event) {
         prepareDescription($(event.currentTarget));
         if ($(this).attr('editStatus') === 'mustDeleteResponses') {
