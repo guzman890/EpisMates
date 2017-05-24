@@ -1,9 +1,53 @@
-# Google App Engine generated folder
-appengine-generated/
-node_modules/*
-src/main/webapp/js/*
-src/main/webapp/dev/*
-
-build/*
-
+.classpath
+.project
+.DS_Store
+.settings
+*.orig
+*.class
+*.jar
 gradle.properties
+build.properties
+test.properties
+report
+target
+appengine-generated
+*.ext
+appengine-web.xml
+chromedriver*
+*.bin
+*.bak
+*.db
+*.md.html
+libs/
+*.js
+node_modules/
+npm-debug.log
+
+.launches
+test-output/*
+src/test/current testng.xml
+src/main/webapp/WEB-INF/classes
+src/client/java/teammates/client/scripts/scalabilitytests/data/
+*.exe
+
+### Gradle ###
+.gradle
+build/
+bin/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+.checkstyle
+.pmd
+.ruleset
+.idea/
+*.iml
+out/
