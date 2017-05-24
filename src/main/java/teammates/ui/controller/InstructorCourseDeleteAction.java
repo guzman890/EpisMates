@@ -37,17 +37,13 @@ public class InstructorCourseDeleteAction extends Action {
 
          //EmailDelete
         
-         Map<String, JoinEmailData> emailDataMap = new TreeMap<String, JoinEmailData>();
+        Map<String, JoinEmailData> emailDataMap = new TreeMap<String, JoinEmailData>();
         //  boolean isSendingToStudent = null;
-        //Shgdhdtj
-          
-           
-        
-            List<StudentAttributes> studentDataList = logic.getStudentsForCourse(idOfCourseToDelete);
+        List<StudentAttributes> studentDataList = logic.getStudentsForCourse(idOfCourseToDelete);
             for (StudentAttributes student : studentDataList) {
-               // taskQueuer.courseDeleteNot(course.getId(), student.getEmail(), false);
-                taskQueuer.courseDeleteNotificationToStudent(course.getId(),student.getEmail());
-               // taskQueuer.scheduleCourseRegistrationInviteToStudent(null,null,false);
+              //taskQueuer.courseDeleteNot(course.getId(), student.getEmail(), false);
+              //taskQueuer.courseDeleteNotificationToStudent(course.getId(),student.getEmail());
+              //taskQueuer.scheduleCourseRegistrationInviteToStudent(null,null,false);
                 emailDataMap.put(student.getEmail(),
                         new JoinEmailData(student.getName(), extractStudentRegistrationKey(student)));
             }
