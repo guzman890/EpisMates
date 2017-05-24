@@ -147,7 +147,7 @@ public class InstructorCoursesPageData extends PageData {
 
             String deleteStudents= getInstructorCourseDeleteStudentsLink(course.getId());
             ElementTag deleteStudentsButton = createButton("DeleteStudents", "btn btn-default btn-xs course-delete-students-link"
-                                                    + "t_course_delete"+idx, "", deleteStudents, Const.Tooltips.COURSE_DELETE_STUDENTS,
+                                                    + idx, "", deleteStudents, Const.Tooltips.COURSE_DELETE_STUDENTS,
                                                    !hasDeletePermission);                                        
             actionsParam.add(enrollButton);
             actionsParam.add(viewButton);

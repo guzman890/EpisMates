@@ -1278,7 +1278,6 @@ public final class Const {
                 + "Please try again after some time";
         public static final String STUDENT_EMAIL_TAKEN_MESSAGE =
                 "Trying to update to an email that is already used by: %s/%s";
-        public static final String STUDENTS_DELETED="he students has been removed from the course";
 
         public static final String FEEDBACK_SESSION_ADDED =
                 "The feedback session has been added. "
