@@ -31,17 +31,17 @@ package teammates.ui.controller;
          try {
              String uploadUrl =
                      GoogleCloudStorageHelper.getNewUploadUrl(Const.ActionURIs.INSTRUCTOR_FEEDBACK_QUESTION_FILE_UPLOAD);
-             statusToAdmin = "Created Url successfully: "  uploadUrl;
+             statusToAdmin = "Created Url successfully: " + uploadUrl;
              return uploadUrl;
          } catch (BlobstoreFailureException e) {
              isError = true;
-             statusToAdmin = "Failed to create profile picture upload-url: "  e.getMessage();
+             statusToAdmin = "Failed to create profile picture upload-url: " + e.getMessage();
          } catch (IllegalArgumentException e) {
              // This branch is not tested as this error can and should never occur
              isError = true;
-             log.severe(Const.ActionURIs.STUDENT_PROFILE_PICTURE_UPLOAD
-                         " was found to be illegal success path. Error: "  e.getMessage());
-             statusToAdmin = "Failed to create profile picture upload-url: "  e.getMessage();
+             log.severe(Const.ActionURIs.STUDENT_PROFILE_PICTURE_UPLOAD +
+                         " was found to be illegal success path. Error: " + e.getMessage());
+             statusToAdmin = "Failed to create profile picture upload-url: " + e.getMessage();
          }
          return "";
      }

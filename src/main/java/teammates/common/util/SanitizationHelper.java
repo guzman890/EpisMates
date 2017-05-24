@@ -62,7 +62,7 @@ public final class SanitizationHelper {
         else{
             String arr[] = sanitized.split("@");
             if(arr.length == 2)
-                sanitized = arr[0]
+                sanitized = arr[0];
         }
         return sanitized.trim();
     }
