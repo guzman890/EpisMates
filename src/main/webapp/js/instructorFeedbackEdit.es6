@@ -9,7 +9,6 @@ setStatusMessage:false, clearStatusMessages:false, fixContribQnGiverRecipient:fa
 showVisibilityCheckboxesIfCustomOptionSelected:false, hasAssignedWeights:false, disallowNonNumericEntries:false
 getVisibilityMessage:false, hideConstSumOptionTable:false, setDefaultContribQnVisibilityIfNeeded:false
 hideRankOptionTable:false, matchVisibilityOptionToFeedbackPath:false prepareDatepickers:false prepareInstructorPages:false
-
 FEEDBACK_SESSION_PUBLISHDATE:false, FEEDBACK_SESSION_PUBLISHTIME:false, FEEDBACK_SESSION_VISIBLEDATE:false
 FEEDBACK_SESSION_VISIBLETIME:false, FEEDBACK_QUESTION_DESCRIPTION:false, FEEDBACK_QUESTION_EDITTEXT:false
 FEEDBACK_QUESTION_SAVECHANGESTEXT:false, FEEDBACK_QUESTION_DISCARDCHANGES:false, FEEDBACK_QUESTION_EDITTYPE:false
@@ -35,7 +34,7 @@ const CONFIRM_DELETE_QNS = 'Are you sure you want to delete this question?';
 const WARNING_EDIT_DELETE_RESPONSES = 'Warning: Existing responses will be deleted by your action';
 const CONFIRM_EDIT_DELETE_RESPONSES =
         '<p>Editing these fields will result in <strong>all existing responses for this question to be deleted.</strong></p>'
-         '<p>Are you sure you want to continue?</p>';
+        + '<p>Are you sure you want to continue?</p>';
 
 const questionsBeforeEdit = [];
 
@@ -156,7 +155,7 @@ function disableQuestion(questionNum) {
  */
 function disableAllQuestions() {
     const numQuestions = $('.questionTable').length;
-    for (let i = 0; i < numQuestions; i = 1) {
+    for (let i = 0; i < numQuestions; i += 1) {
         disableQuestion(i);
     }
 }
@@ -677,7 +676,7 @@ function formatQuestionNumbers() {
 
     $questions.each(function (index) {
         const $selector = $(this).find('.questionNumber');
-        $selector.val(index  1);
+        $selector.val(index + 1);
         if (index !== $questions.size() - 1) {
             $selector.prop('disabled', true);
         }
@@ -705,7 +704,7 @@ function setupQuestionCopyModal() {
                 $questionCopyStatusMessage.removeClass('alert alert-danger');
                 $questionCopyStatusMessage.html(
                         'Loading possible questions to copy. Please wait ...<br>'
-                       "<img class='margin-center-horizontal' src='/images/ajax-loader.gif'/>");
+                      + "<img class='margin-center-horizontal' src='/images/ajax-loader.gif'/>");
             },
             error() {
                 $questionCopyStatusMessage.html(
@@ -745,7 +744,7 @@ function bindCopyButton() {
                 $this.find('input.courseid').attr('name', `courseid-${index}`);
                 $this.find('input.fsname').attr('name', `fsname-${index}`);
 
-                index = 1;
+                index += 1;
                 hasRowSelected = true;
             }
         });
@@ -774,7 +773,7 @@ function bindCopyEvents() {
         } else {
             $(this).addClass('row-selected');
             $(this).children('td:first').html('<input type="checkbox" checked>');
-            numRowsSelected = 1;
+            numRowsSelected += 1;
         }
 
         const $button = $('#button_copy_submit');
@@ -885,8 +884,7 @@ function readyFeedbackEditPage() {
 
         $(this).parents('form.form_question').submit();
     });
- 
-     //File Load
+//File Load
      $('#feedBackFileUpload').change(function () {
          console.log("hola cmabios 2");
          const val = $(this).val();
@@ -906,18 +904,18 @@ function readyFeedbackEditPage() {
      //submit file
      $('#feedbakFileUploadSubmit').on('click', () => {
          console.log("click");
-         finaliseUploadFileForm();
-     });
-     
-     function finaliseUploadFileForm(){
-         if ($('#feedBackFileUpload').val() === '') {
-             return;
-         }
- 
+        finaliseUploadFileForm();
+    });
+    
+    function finaliseUploadFileForm(){
+        if ($('#feedBackFileUpload').val() === '') {
+            return;
+        }
+
          const initialSubmitMessage = $('#feedbakFileUploadSubmit').html();
          $.ajax({
-             //url: '/page/instructorFeedbackQuestionCreateFormUrl?user='  $("input[name='user']").val()
-             url: '/page/studentProfileCreateFormUrl?user='  $("input[name='user']").val(),
+             //url: '/page/instructorFeedbackQuestionCreateFormUrl?user=' + $("input[name='user']").val()
+             url: '/page/studentProfileCreateFormUrl?user=' + $("input[name='user']").val(),
              beforeSend() {
                  $('#feedbakFileUploadSubmit').html('<img src="/images/ajax-loader.gif">');
              },

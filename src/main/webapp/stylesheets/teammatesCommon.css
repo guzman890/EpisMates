@@ -680,7 +680,7 @@ input.inline {
     width: auto;
 }
 
-.bs-example  .highlight {
+.bs-example + .highlight {
     margin: -15px -15px 15px;
     border-radius: 0;
     border-width: 0 0 1px;
@@ -744,7 +744,7 @@ input.inline {
         margin-right: 0;
     }
 
-    .bs-example  .highlight {
+    .bs-example + .highlight {
         border-width: 1px;
         -webkit-border-bottom-left-radius: 4px;
         -moz-border-radius-bottomleft: 4px;
