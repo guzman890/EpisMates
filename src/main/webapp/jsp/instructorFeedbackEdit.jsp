@@ -58,7 +58,7 @@
     
     <feedbackEdit:newQuestionForm fqForm="${data.newQnForm}" nextQnNum="${fn:length(data.qnForms) + 1}"/>
     <feedbackEdit:copyQuestionModal feedbackSessionName="${data.fsForm.fsName}" courseId="${data.fsForm.courseId}"/>
-    
+    <feedbackEdit:uploadFileModal modal=""/>
     <br>
     <br>
     <feedbackEdit:previewSessionForm previewForm="${data.previewForm}" />

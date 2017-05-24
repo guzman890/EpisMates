@@ -178,6 +178,7 @@ public final class Const {
         public static final String COURSE_ARCHIVE =
                 "Archive the course so that it will not be shown in the home page any more "
                 + "(you can still access it from the 'Courses' tab)";
+/*nuevo*/ public static final String COURSE_DELETE_STUDENTS="Delete all students in the course";
         public static final String COURSE_ADD_FEEDBACKSESSION = "Add a feedback session for the course";
         public static final String COURSE_EMAIL_PENDING_COMMENTS =
                 "Send email notification to recipients of %s pending comment%s";
@@ -862,6 +863,7 @@ public final class Const {
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS_EDIT_SAVE =
                 "/page/instructorCourseStudentDetailsEditSave";
         public static final String INSTRUCTOR_COURSE_STUDENT_DELETE = "/page/instructorCourseStudentDelete";
+        public static final String INSTRUCTOR_COURSE_STUDENTS_DELETE="/page/instructorCoursesStudentsDelete";
         public static final String INSTRUCTOR_COURSE_STUDENT_LIST_DOWNLOAD = "/page/instructorCourseStudentListDownload";
         public static final String INSTRUCTOR_COURSE_ENROLL_PAGE = "/page/instructorCourseEnrollPage";
         public static final String INSTRUCTOR_COURSE_ENROLL_SAVE = "/page/instructorCourseEnrollSave";
@@ -913,6 +915,9 @@ public final class Const {
         public static final String INSTRUCTOR_FEEDBACK_QUESTION_EDIT = "/page/instructorFeedbackQuestionEdit";
         public static final String INSTRUCTOR_FEEDBACK_QUESTION_VISIBILITY_MESSAGE =
                 "/page/instructorFeedbackQuestionvisibilityMessage";
+
+        public static final String INSTRUCTOR_FEEDBACK_QUESTION_CREATEUPLOADFORMURL = "/page/instructorFeedbackQuestionCreateFormUrl";
+        public static final String INSTRUCTOR_FEEDBACK_QUESTION_FILE_UPLOAD = "/page/instructorFeedbackQuestionFileUpload";
 
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_ADD = "/page/instructorFeedbackResponseCommentAdd";
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_EDIT = "/page/instructorFeedbackResponseCommentEdit";
@@ -1270,6 +1275,7 @@ public final class Const {
         public static final String STUDENT_NOT_FOUND_FOR_EDIT =
                 "The student you tried to edit does not exist. " + STUDENT_EVENTUAL_CONSISTENCY;
         public static final String STUDENT_DELETED = "The student has been removed from the course";
+        public static final String STUDENTS_DELETED= "The students has been removed from the course";
         public static final String STUDENT_PROFILE_EDITED = "Your profile has been edited successfully";
         public static final String STUDENT_PROFILE_PICTURE_SAVED = "Your profile picture has been saved successfully";
         public static final String STUDENT_PROFILE_PIC_TOO_LARGE = "The uploaded profile picture was too large. "

@@ -15,6 +15,7 @@ public class InstructorCourseStudentDeleteAction extends Action {
         Assumption.assertNotNull(courseId);
 
         String studentEmail = getRequestParamValue(Const.ParamsNames.STUDENT_EMAIL);
+
         Assumption.assertNotNull(studentEmail);
 
         InstructorAttributes instructor = logic.getInstructorForGoogleId(courseId, account.googleId);

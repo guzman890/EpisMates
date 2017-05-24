@@ -17,9 +17,19 @@
     <input type="hidden" id="comment-recipient" value="${data.commentRecipient}">
     <c:if test="${not empty data.studentProfile}">
         <csd:studentProfile student="${data.studentProfile}"/>
+        <p>Este es mi perfil</p>
     </c:if>
+    <p>Perfil del estudiante</p>
     <csd:studentInformationTable studentInfoTable="${data.studentInfoTable}" />
     <c:if test="${not empty data.studentProfile}">
         <ti:moreInfo student="${data.studentProfile}" />
+        <p>Esta es mi informacion</p>
     </c:if>
+    <a href="https://www.linkedin.com">LinkedIn</a>
+    <button id="myButton" class="float-left submit-button" >Ver Perfil</button>
+    <script type="text/javascript">
+      document.getElementById("myButton").onclick = function (){
+        location.href = "www.linkedin.com";
+      };
+</script>
 </ti:instructorPage>

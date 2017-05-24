@@ -399,6 +399,16 @@ public class PageData {
         return link;
     }
 
+    //NUEVA FUNCION
+
+    public String getInstructorCourseDeleteStudentsLink(String courseId) {
+        String link = Const.ActionURIs.INSTRUCTOR_COURSE_STUDENTS_DELETE;
+        link = Url.addParamToUrl(link, Const.ParamsNames.COURSE_ID, courseId);
+        link = addUserIdToUrl(link);
+        return link;
+    }
+
+
     public String getInstructorCourseArchiveLink(String courseId, boolean archiveStatus, boolean isHome) {
         String link = Const.ActionURIs.INSTRUCTOR_COURSE_ARCHIVE;
         link = Url.addParamToUrl(link, Const.ParamsNames.COURSE_ID, courseId);
@@ -418,6 +428,7 @@ public class PageData {
     }
 
     public String getInstructorFeedbacksLink(String courseId) {
+
         String link = Const.ActionURIs.INSTRUCTOR_FEEDBACKS_PAGE;
         link = addUserIdToUrl(link);
         link = Url.addParamToUrl(link, Const.ParamsNames.COURSE_ID, courseId);

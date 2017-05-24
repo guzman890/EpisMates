@@ -499,13 +499,14 @@ public final class FeedbackResponsesLogic {
     public void updateFeedbackResponsesForChangingTeam(
             String courseId, String userEmail, String oldTeam, String newTeam) {
 
-        deleteResponsesFromUserToTeam(courseId, userEmail);
-        deleteResponsesFromTeamToUser(courseId, userEmail);
+        //We keep the shipments when the team structure changes
+//        deleteResponsesFromUserToTeam(courseId, userEmail);
+//        deleteResponsesFromTeamToUser(courseId, userEmail);
 
-        boolean isOldTeamEmpty = studentsLogic.getStudentsForTeam(oldTeam, courseId).isEmpty();
-        if (isOldTeamEmpty) {
-            deleteTeamResponses(courseId, oldTeam);
-        }
+//        boolean isOldTeamEmpty = studentsLogic.getStudentsForTeam(oldTeam, courseId).isEmpty();
+//        if (isOldTeamEmpty) {
+//            deleteTeamResponses(courseId, oldTeam);
+//        }
     }
 
     private void deleteTeamResponses(String courseId, String oldTeam) {

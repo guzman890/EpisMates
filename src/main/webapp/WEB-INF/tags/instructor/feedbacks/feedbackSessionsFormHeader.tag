@@ -29,9 +29,9 @@
                 </h5>
             </div>
         </div>
-        <h4 class="label-control col-xs-12 col-md-1 text-md">Or: </h4>
+        <h4 class="label-control col-xs-12 col-md-1 text-md">O Eliga: </h4>
         <div class="col-xs-12 col-md-3">
-            <a id="button_copy" class="btn btn-info" style="vertical-align:middle;">Loading...</a>
+            <a id="button_copy" class="btn btn-info" style="vertical-align:middle;">Cargando...</a>
         </div>
     </div>
 </c:if>
