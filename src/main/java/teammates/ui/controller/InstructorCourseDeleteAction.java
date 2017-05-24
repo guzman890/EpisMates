@@ -1,5 +1,5 @@
-package teammates.ui.controller;
 
+package teammates.ui.controller;
 import teammates.common.util.Assumption;
 import teammates.common.util.Const;
 import teammates.common.util.StatusMessage;

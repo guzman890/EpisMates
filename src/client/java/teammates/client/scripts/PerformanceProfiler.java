@@ -557,6 +557,21 @@ public class PerformanceProfiler extends Thread {
         return status.toString();
     }
 
+    @PerformanceTest(name = "BD delete students")
+    public String deleteStudents() {
+      /*  StringBuilder status = new StringBuilder();
+        Set<String> set = data.students.keySet();
+        for (String studentKey : set) {
+            StudentAttributes student = data.students.get(studentKey);
+            status.append(' ').append(BackDoor.deleteStudent(student.course, student.email));
+        }
+        return status.toString();*/
+        System.out.print("hola");
+        return "";
+    }
+
+
+
     @PerformanceTest(name = "BD Delete Course")
     public String deleteCourse() {
         StringBuilder status = new StringBuilder();

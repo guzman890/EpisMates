@@ -15,7 +15,7 @@
                     <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title" id="copyModalTitle">
-                    Creating a new session by copying a previous session
+                    Crear una nueva sesion copiando una sesion previa                    
                 </h4>
             </div>
             <div class="modal-body" id="copySessionsBody">
@@ -47,7 +47,7 @@
                             placeholder="e.g. Feedback for Project Presentation 1">
                     </div>
                     <%-- Previous Session --%>
-                    <label>Copy sessions/questions from</label>
+                    <label>Copiar sessions/questions de</label>
                     <table class="table-responsive table table-bordered table-hover margin-0"
                         id="copyTableModal">
                         <thead class="fill-primary">
@@ -75,10 +75,10 @@
             </div>
             <div class="modal-footer margin-0">
                 <button type="button" class="btn btn-primary" id="button_copy_submit" disabled>
-                    Copy
+                    Copiar
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">
-                    Cancel
+                    Cancelar
                 </button>
             </div>
         </div>

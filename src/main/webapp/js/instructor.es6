@@ -327,6 +327,24 @@ function attachEventToDeleteStudentLink() {
     });
 }
 
+//DELETE STUDENTS OF A COURSE
+
+function bindCourseDeleteStudentsLinks() {
+    $('body').on('click', '.course-delete-students-link', (event) => {
+        event.preventDefault();
+
+        const $clickedLink = $(event.target);
+        const messageText = `Are you sure you want to  remove all students of: ${$clickedLink.data('courseId')}? `
+                          ;
+        const okCallback = function () {
+            window.location = $clickedLink.attr('href');
+        };
+
+        BootboxWrapper.showModalConfirmation('Confirm deleting students', messageText, okCallback, null,
+                BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
+    });
+}
+
 function bindRemindButtons() {
     $('body').on('click', '.session-remind-inner-for-test, .session-remind-for-test', (event) => {
         event.preventDefault();
@@ -469,4 +487,5 @@ function prepareInstructorPages() {
     // bind the event handler to show confirmation modal
     bindCourseDeleteLinks();
     bindSessionDeleteLinks();
+    bindCourseDeleteStudentsLinks();
 }
