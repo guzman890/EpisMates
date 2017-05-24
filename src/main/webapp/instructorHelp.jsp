@@ -8802,7 +8802,7 @@
                                 <tr id="student-c0.0">
                                     <td id="studentphoto-c0.0">
                                         <div class="profile-pic-icon-click align-center" data-link="">
-                                            <a class="student-profile-pic-view-link btn-link">View Photo</a>
+                                            <a class="student-profile-pic-view-link btn-link">Ver Foto de Estudiante</a>
                                             <img src="" alt="No Image Given" class="hidden">
                                         </div>
                                     </td>
