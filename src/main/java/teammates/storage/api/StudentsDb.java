@@ -482,7 +482,10 @@ public class StudentsDb extends EntitiesDb {
     public void deleteStudent(String courseId, String email) {
         deleteStudent(courseId, email, true);
     }
-
+//nuevo
+    public void deleteStudents(String courseId ,boolean  hasDocument) {
+        deleteStudentsForCourse(courseId);
+    }
     public void deleteStudentWithoutDocument(String courseId, String email) {
         deleteStudent(courseId, email, false);
     }

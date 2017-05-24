@@ -466,6 +466,10 @@ public final class StudentsLogic {
         deleteStudentCascade(courseId, studentEmail, true);
     }
 
+    public void deleteStudentsCascade(String courseId) {
+        deleteStudentsCascade(courseId, true);
+    }
+
     public void deleteStudentCascadeWithoutDocument(String courseId, String studentEmail) {
         deleteStudentCascade(courseId, studentEmail, false);
     }
@@ -478,6 +482,15 @@ public final class StudentsLogic {
         studentsDb.deleteStudent(courseId, studentEmail, hasDocument);
     }
 
+//nuevo
+    public void deleteStudentsCascade(String courseId,boolean hasDocument) {
+        // delete responses before deleting the student as we need to know the student's team.
+        //frLogic.deleteFeedbackResponsesForStudentAndCascade(courseId, studentEmail);
+       // commentsLogic.deleteCommentsForStudent(courseId, studentEmail);
+        //fsLogic.deleteStudentFromRespondentsList(getStudentForEmail(courseId, studentEmail));
+        studentsDb.deleteStudents(courseId, hasDocument);
+    }
+ 
     public void deleteStudentsForGoogleId(String googleId) {
         List<StudentAttributes> students = studentsDb.getStudentsForGoogleId(googleId);
         for (StudentAttributes student : students) {

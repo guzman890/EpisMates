@@ -6,7 +6,10 @@ import teammates.common.util.Const;
 import teammates.common.util.StatusMessage;
 import teammates.common.util.StatusMessageColor;
 
-public class InstructorCourseStudentDeleteAction extends Action {
+/**
+ * Action: Delete  students in the course.
+ */
+public class InstructorCourseDeleteStudentsAction extends Action {
 
     @Override
     public ActionResult execute() {
@@ -14,17 +17,14 @@ public class InstructorCourseStudentDeleteAction extends Action {
         String courseId = getRequestParamValue(Const.ParamsNames.COURSE_ID);
         Assumption.assertNotNull(courseId);
 
-        String studentEmail = getRequestParamValue(Const.ParamsNames.STUDENT_EMAIL);
-
-        Assumption.assertNotNull(studentEmail);
-
         InstructorAttributes instructor = logic.getInstructorForGoogleId(courseId, account.googleId);
         gateKeeper.verifyAccessible(
                 instructor, logic.getCourse(courseId), Const.ParamsNames.INSTRUCTOR_PERMISSION_MODIFY_STUDENT);
 
-        logic.deleteStudent(courseId, studentEmail);
-        statusToUser.add(new StatusMessage(Const.StatusMessages.STUDENT_DELETED, StatusMessageColor.SUCCESS));
-        statusToAdmin = "Student <span class=\"bold\">" + studentEmail
+        logic.deleteStudents(courseId);
+        
+        statusToUser.add(new StatusMessage(Const.StatusMessages.STUDENTS_DELETED, StatusMessageColor.SUCCESS));
+        statusToAdmin = "Students <span class=\"bold\">"
                       + "</span> in Course <span class=\"bold\">[" + courseId + "]</span> deleted.";
 
         RedirectResult result = createRedirectResult(Const.ActionURIs.INSTRUCTOR_COURSE_DETAILS_PAGE);
