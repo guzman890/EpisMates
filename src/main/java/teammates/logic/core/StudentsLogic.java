@@ -604,7 +604,7 @@ public final class StudentsLogic {
                                                     "<br>" + Const.StatusMessages.ENROLL_LINES_PROBLEM_DETAIL_PREFIX + " ");
                     invalidityInfo.add(String.format(Const.StatusMessages.ENROLL_LINES_PROBLEM, sanitizedLine, info));
                 }
-
+                // if para duclicate
                 if (isStudentEmailDuplicated(student.email, studentEmailList)) {
                     String info =
                             StringHelper.toString(
@@ -627,7 +627,7 @@ public final class StudentsLogic {
 
         return studentList;
     }
-
+    // duplciate Student en mass-roll
     private List<String> getInvalidityInfoInDuplicatedEmail(String email,
             ArrayList<String> studentEmailList, String[] linesArray) {
         List<String> info = new ArrayList<String>();
