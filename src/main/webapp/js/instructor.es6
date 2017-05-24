@@ -283,14 +283,14 @@ function bindCourseDeleteLinks() {
         event.preventDefault();
 
         const $clickedLink = $(event.target);
-        const messageText = `Are you sure you want to delete the course: ${$clickedLink.data('courseId')}? `
-                          + 'This operation will delete all students and sessions in this course. '
-                          + 'All instructors of this course will not be able to access it hereafter as well.';
+        const messageText = ` Estas seguro que quieres ELIMINAR el curso: ${$clickedLink.data('courseId')}? ` //richardd
+                          + 'Esta operacion eliminara todos los datos(estudiantes y sesiones) del Curso. ' //richardd
+                          + 'Ningun instructor del Curso tendra acceso luego de eliminarlo.'; //richardd
         const okCallback = function () {
             window.location = $clickedLink.attr('href');
         };
 
-        BootboxWrapper.showModalConfirmation('Confirm deleting course', messageText, okCallback, null,
+        BootboxWrapper.showModalConfirmation('Confirmación para eliminar Curso', messageText, okCallback, null, //richardd
                 BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
     });
 }

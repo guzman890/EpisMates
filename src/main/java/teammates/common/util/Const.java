@@ -172,8 +172,9 @@ public final class Const {
 
         public static final String COURSE_ENROLL = "Enroll student into the course";
         public static final String COURSE_DETAILS = "View, edit and send invitation emails to the students in the course";
-        public static final String COURSE_EDIT = "Edit Course information and instructor list";
-        public static final String COURSE_DELETE = "Delete the course and its corresponding students and sessions";
+        public static final String COURSE_EDIT = "Editar Información del Curso";//richardc
+        public static final String COURSE_EDITNAME = "Editar el NOMBRE de este CURSO"; //richardc
+        public static final String COURSE_DELETE = "Eliminar Curso";//richardc
         public static final String COURSE_ARCHIVE =
                 "Archive the course so that it will not be shown in the home page any more "
                 + "(you can still access it from the 'Courses' tab)";
@@ -185,7 +186,7 @@ public final class Const {
         public static final String PERCEIVED =
                 "This is the average of what other team members think this student contributed";
 
-        public static final String COURSE_INFO_EDIT = "Edit course name";
+        public static final String COURSE_INFO_EDIT = "Editar Informacion del Curso"; //richardc
         public static final String COURSE_INSTRUCTOR_EDIT = "Edit instructor details";
         public static final String COURSE_INSTRUCTOR_CANCEL_EDIT = "Cancel editing instructor details";
         public static final String COURSE_INSTRUCTOR_DELETE = "Delete the instructor from the course";
@@ -855,6 +856,7 @@ public final class Const {
         public static final String INSTRUCTOR_COURSE_ARCHIVE = "/page/instructorCourseArchive";
         public static final String INSTRUCTOR_COURSE_DETAILS_PAGE = "/page/instructorCourseDetailsPage";
         public static final String INSTRUCTOR_COURSE_EDIT_PAGE = "/page/instructorCourseEditPage";
+        public static final String INSTRUCTOR_COURSE_EDITNAME_PAGE = "/page/instructorCourseEditNamePage";//richardc
         public static final String INSTRUCTOR_COURSE_EDIT_SAVE = "/page/instructorCourseEditSave";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS_PAGE = "/page/instructorCourseStudentDetailsPage";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS_EDIT = "/page/instructorCourseStudentDetailsEdit";
@@ -1071,6 +1073,7 @@ public final class Const {
                 "/jsp/instructorFeedbackResponseCommentsLoad.jsp";
         public static final String INSTRUCTOR_COURSES = "/jsp/instructorCourses.jsp";
         public static final String INSTRUCTOR_COURSE_EDIT = "/jsp/instructorCourseEdit.jsp";
+        public static final String INSTRUCTOR_COURSE_EDITNAME = "/jsp/instructorCourseEditName.jsp"; //richardc
         public static final String INSTRUCTOR_COURSE_DETAILS = "/jsp/instructorCourseDetails.jsp";
         public static final String INSTRUCTOR_COURSE_STUDENT_DETAILS = "/jsp/instructorCourseStudentDetails.jsp";
         public static final String INSTRUCTOR_COURSE_STUDENT_EDIT = "/jsp/instructorCourseStudentEdit.jsp";
@@ -1196,7 +1199,7 @@ public final class Const {
         public static final String COURSE_EXISTS =
                 "A course by the same ID already exists in the system, possibly created by another user. "
                 + "Please choose a different course ID";
-        public static final String COURSE_EDITED = "The course has been edited.";
+        public static final String COURSE_EDITED = "El curso se ha actualizado."; //richardc
         public static final String COURSE_ARCHIVED =
                 "The course %s has been archived. It will not appear in the home page any more.";
         // TODO: Let undo process to be in the Course page for now.
@@ -1205,7 +1208,7 @@ public final class Const {
                 COURSE_ARCHIVED + " You can access archived courses from the 'Courses' tab.<br>"
                 + "Go there to undo the archiving and bring the course back to the home page.";
         public static final String COURSE_UNARCHIVED = "The course %s has been unarchived.";
-        public static final String COURSE_DELETED = "The course %s has been deleted.";
+        public static final String COURSE_DELETED = "Se ha eliminado el Curso: %s"; // richardd
         public static final String COURSE_EMPTY =
                 "You have not created any courses yet. Use the form above to create a course.";
         public static final String COURSE_EMPTY_IN_INSTRUCTOR_FEEDBACKS =
