@@ -14,7 +14,7 @@ import teammates.common.util.StringHelper;
  */
 public class StudentAttributesFactory {
     public static final int MIN_FIELD_COUNT = 3;
-    public static final int MAX_FIELD_COUNT = 5;
+    public static final int MAX_FIELD_COUNT = 6;
 
     public static final String ERROR_HEADER_ROW_FIELD_REPEATED = "The header row contains repeated fields";
     public static final String ERROR_HEADER_ROW_FIELD_MISSED =
@@ -30,21 +30,24 @@ public class StudentAttributesFactory {
     public static final int THIRD_COLUMN_INDEX = 2;
     public static final int FOURTH_COLUMN_INDEX = 3;
     public static final int FIFTH_COLUMN_INDEX = 4;
+    public static final int SIXTH_COLUMN_INDEX = 5;
 
     private int sectionColumnIndex;
     private int teamColumnIndex;
     private int nameColumnIndex;
     private int emailColumnIndex;
     private int commentColumnIndex;
+    //private int tagColumnIndex;
 
     private boolean hasSection;
     private boolean hasTeam;
     private boolean hasName;
     private boolean hasEmail;
     private boolean hasComment;
+    //private boolean hastag;
 
     public StudentAttributesFactory() throws EnrollException {
-        this("section|team|name|email|comment");
+        this("section|team|name|email|comment|tag");
     }
 
     /**
@@ -71,6 +74,9 @@ public class StudentAttributesFactory {
             if (!hasEmail) {
                 missingField.append(" <mark>Email</mark>");
             }
+            /*if (!hasTag) {
+                missingField.append(" <mark>Tag</mark>");
+            }*/
             throw new EnrollException(ERROR_HEADER_ROW_FIELD_MISSED + ":" + missingField.toString());
         }
     }
@@ -88,6 +94,7 @@ public class StudentAttributesFactory {
         boolean hasMissingFields = columns.length <= teamColumnIndex
                                    || columns.length <= nameColumnIndex
                                    || columns.length <= emailColumnIndex;
+                                   //|| columns.length <= tagColumnIndex;
 
         if (hasMissingFields) {
             throw new EnrollException(ERROR_ENROLL_LINE_TOOFEWPARTS);
@@ -96,6 +103,7 @@ public class StudentAttributesFactory {
         String paramTeam = StringHelper.removeExtraSpace(columns[teamColumnIndex]);
         String paramName = StringHelper.removeExtraSpace(columns[nameColumnIndex]);
         String paramEmail = StringHelper.removeExtraSpace(columns[emailColumnIndex]);
+        //String paramTag = StringHelper.removeExtraSpace(columns[tagColumnIndex]);
 
         String paramComment = "";
 
@@ -112,6 +120,8 @@ public class StudentAttributesFactory {
         }
 
         return new StudentAttributes(paramSection, paramTeam, paramName, paramEmail, paramComment, courseId);
+        //return new StudentAttributes(paramSection, paramTeam, paramName, paramEmail, paramComment, courseId, paramTag);
+
     }
 
     private int locateColumnIndexes(String headerRow) throws EnrollException {
@@ -123,6 +133,7 @@ public class StudentAttributesFactory {
         hasName = false;
         hasEmail = false;
         hasComment = false;
+        //hastag = false;
 
         String[] columns = splitLineIntoColumns(headerRow);
 
@@ -154,7 +165,12 @@ public class StudentAttributesFactory {
                 count++;
                 fieldCount = hasComment ? fieldCount : fieldCount + 1;
                 hasComment = true;
-            }
+            }/* else if (StringHelper.isAnyMatching(str, FieldValidator.REGEX_COLUMN_COMMENT)) {
+                tagColumnIndex = curPos;
+                count++;
+                fieldCount = tagComment ? fieldCount : fieldCount + 1;
+                hasTag = true;
+            }*/
         }
 
         if (count > fieldCount) {

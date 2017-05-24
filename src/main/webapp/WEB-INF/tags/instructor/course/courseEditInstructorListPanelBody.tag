@@ -16,7 +16,7 @@
         <input type="hidden" name="<%=Const.ParamsNames.USER_ID%>" value="${data.account.googleId}">
     
         <div id="instructorTable${instructorPanel.index}">
-            
+            <!--
             <div class="form-group">
                 <label class="col-sm-3 control-label">Google ID:</label>
                 <div class="col-sm-9">
@@ -37,7 +37,7 @@
                     </c:choose>
                 </div>
             </div>
-
+            -->
             <div class="form-group">
                 <label class="col-sm-3 control-label">Name:</label>
                 <div class="col-sm-9">

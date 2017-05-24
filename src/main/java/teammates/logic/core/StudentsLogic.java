@@ -466,6 +466,10 @@ public final class StudentsLogic {
         deleteStudentCascade(courseId, studentEmail, true);
     }
 
+    public void deleteStudentsCascade(String courseId) {
+        deleteStudentsCascade(courseId, true);
+    }
+
     public void deleteStudentCascadeWithoutDocument(String courseId, String studentEmail) {
         deleteStudentCascade(courseId, studentEmail, false);
     }
@@ -478,6 +482,15 @@ public final class StudentsLogic {
         studentsDb.deleteStudent(courseId, studentEmail, hasDocument);
     }
 
+//nuevo
+    public void deleteStudentsCascade(String courseId,boolean hasDocument) {
+        // delete responses before deleting the student as we need to know the student's team.
+        //frLogic.deleteFeedbackResponsesForStudentAndCascade(courseId, studentEmail);
+       // commentsLogic.deleteCommentsForStudent(courseId, studentEmail);
+        //fsLogic.deleteStudentFromRespondentsList(getStudentForEmail(courseId, studentEmail));
+        studentsDb.deleteStudents(courseId, hasDocument);
+    }
+ 
     public void deleteStudentsForGoogleId(String googleId) {
         List<StudentAttributes> students = studentsDb.getStudentsForGoogleId(googleId);
         for (StudentAttributes student : students) {
@@ -604,7 +617,7 @@ public final class StudentsLogic {
                                                     "<br>" + Const.StatusMessages.ENROLL_LINES_PROBLEM_DETAIL_PREFIX + " ");
                     invalidityInfo.add(String.format(Const.StatusMessages.ENROLL_LINES_PROBLEM, sanitizedLine, info));
                 }
-
+                // if para duclicate
                 if (isStudentEmailDuplicated(student.email, studentEmailList)) {
                     String info =
                             StringHelper.toString(
@@ -627,7 +640,7 @@ public final class StudentsLogic {
 
         return studentList;
     }
-
+    // duplciate Student en mass-roll
     private List<String> getInvalidityInfoInDuplicatedEmail(String email,
             ArrayList<String> studentEmailList, String[] linesArray) {
         List<String> info = new ArrayList<String>();

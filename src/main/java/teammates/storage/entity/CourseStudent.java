@@ -54,10 +54,6 @@ public class CourseStudent extends Entity implements StoreCallback {
     @Persistent
     private transient String registrationKey;
 
-    /**
-     * The student's Google ID. Links to the Account object.
-     * This can be null if the student hasn't joined the course yet.
-     */
     @Persistent
     @SerializedName("google_id")
     private String googleId;
@@ -151,7 +147,7 @@ public class CourseStudent extends Entity implements StoreCallback {
     }
 
     public void setGoogleId(String googleId) {
-        this.googleId = googleId == null ? null : googleId.trim();
+        this.googleId = googleId == null ? "" : googleId.trim();
     }
 
     public String getName() {
