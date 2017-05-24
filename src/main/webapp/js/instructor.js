@@ -313,6 +313,7 @@ function bindCourseDeleteStudentsLinks() {
         BootboxWrapper.showModalConfirmation('Confirm deleting students', messageText, okCallback, null, BootboxWrapper.DEFAULT_OK_TEXT, BootboxWrapper.DEFAULT_CANCEL_TEXT, StatusType.DANGER);
     });
 }
+
 function bindRemindButtons() {
     $('body').on('click', '.session-remind-inner-for-test, .session-remind-for-test', function (event) {
         event.preventDefault();
