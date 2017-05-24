@@ -604,15 +604,7 @@ public final class StudentsLogic {
                                                     "<br>" + Const.StatusMessages.ENROLL_LINES_PROBLEM_DETAIL_PREFIX + " ");
                     invalidityInfo.add(String.format(Const.StatusMessages.ENROLL_LINES_PROBLEM, sanitizedLine, info));
                 }
-                // if para duclicate
-                if (isStudentEmailDuplicated(student.email, studentEmailList)) {
-                    String info =
-                            StringHelper.toString(
-                                    getInvalidityInfoInDuplicatedEmail(student.email, studentEmailList, linesArray),
-                                    "<br>" + Const.StatusMessages.ENROLL_LINES_PROBLEM_DETAIL_PREFIX + " ");
-                    invalidityInfo.add(String.format(Const.StatusMessages.ENROLL_LINES_PROBLEM, sanitizedLine, info));
-                }
-
+                
                 studentEmailList.add(student.email);
                 studentList.add(student);
             } catch (EnrollException e) {
@@ -627,13 +619,7 @@ public final class StudentsLogic {
 
         return studentList;
     }
-    // duplciate Student en mass-roll
-    private List<String> getInvalidityInfoInDuplicatedEmail(String email,
-            ArrayList<String> studentEmailList, String[] linesArray) {
-        List<String> info = new ArrayList<String>();
-        info.add("Same email address as the student in line \"" + linesArray[studentEmailList.indexOf(email) + 1] + "\"");
-        return info;
-    }
+    
 
     private boolean isStudentEmailDuplicated(String email,
             ArrayList<String> studentEmailList) {
