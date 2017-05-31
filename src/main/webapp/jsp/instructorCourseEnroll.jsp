@@ -23,6 +23,11 @@
                 <span class="glyphicon glyphicon-exclamation-sign glyphicon-primary"></span> If you want to enroll more then <strong>100</strong> students into one course, divide students into sections containing no more than <strong>100</strong> students.
             </div>
             <br>
+	    <!-- En esta parte se identifica el formulario para llenar datos
+		 El enrrol de los cursos se esta trabjando con los archivos test para la validacion de los mensajes 
+		 de alerta.
+	    -->
+
             <form action="${data.instructorCourseEnrollSaveLink}" method="post" class="form-horizontal" role="form">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -32,7 +37,6 @@
                             <br>
                             
                             <t:statusMessage statusMessagesToUser="${data.statusMessagesToUser}" />
-                            
                             <button type="submit" title="Enroll" id="button_enroll" name="button_enroll" class="btn btn-primary btn-md">
                                 Enroll students
                             </button>

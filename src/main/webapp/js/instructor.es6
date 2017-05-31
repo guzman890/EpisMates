@@ -26,19 +26,24 @@ function isStudentTeamNameValid(teamName) {
  * @returns {Boolean}
  */
 function isStudentInputValid(editName, editTeamName, editEmail) {
-    if (editName === '' || editTeamName === '' || editEmail === '') {
+    if (editName === '' || editEmail === '') {
         setStatusMessage(DISPLAY_FIELDS_EMPTY, StatusType.DANGER);
         return false;
     } else if (!isNameValid(editName)) {
         setStatusMessage(DISPLAY_NAME_INVALID, StatusType.DANGER);
         return false;
-    } else if (!isStudentTeamNameValid(editTeamName)) {
-        setStatusMessage(DISPLAY_STUDENT_TEAMNAME_INVALID, StatusType.DANGER);
-        return false;
     } else if (!isEmailValid(editEmail)) {
         setStatusMessage(DISPLAY_EMAIL_INVALID, StatusType.DANGER);
         return false;
     }
+    //|| editTeamName === '' estamos borrando esto para poder llenar datos de
+    //los estudiantes sin que sea necesario llenar el TEAM al que pertenecen
+    /*
+        Aqui se borra para poder no verificar que el campo Team este vacio
+        else if (!isStudentTeamNameValid(editTeamName)) {
+        setStatusMessage(DISPLAY_STUDENT_TEAMNAME_INVALID, StatusType.DANGER);
+        return false;
+    */
 
     return true;
 }
